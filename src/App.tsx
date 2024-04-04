@@ -6,11 +6,15 @@ const [number1, setNumber1] = useState(1)
 const [number2, setNumber2] = useState(1)
 const [number3, setNumber3] = useState(1)
 const [operation, setOperation] = useState('+')
-const [level, setLevel] = useState('+')
+const [guess, setGuess] = useState('')
+const [level, setLevel] = useState<Number>(1)
+
+const operations = ['+', '-', '*']
 
 const checkAnswer = (guess: string) => {
   let answer;
-  if (operation == '+') {
+  console.log(operation)
+  if (operation === '+') {
     answer = number1 + number2
   } else if (operation == '-') {
     answer = number1 - number2
@@ -24,6 +28,7 @@ if (Number(guess) == answer) {
   console.log('correct!')
   setNumber1(Math.round(Math.random() * 20))
   setNumber2(Math.round(Math.random() * 20))
+  setOperation(operations[Math.round(Math.random() * 3)])
 }
   console.log(answer)
 }
