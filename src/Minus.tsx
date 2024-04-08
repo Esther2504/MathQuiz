@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function Substract() {
+export default function Minus() {
   const [number1, setNumber1] = useState(1)
 const [number2, setNumber2] = useState(1)
 const [number3, setNumber3] = useState(1)
