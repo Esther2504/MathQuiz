@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 export default function Plus() {
@@ -86,13 +86,20 @@ export default function Plus() {
     }
   }
 
+  let date = new Date()
+
   setTimeout(() => {
+// setTimer()
 
   }, 1000 * 60)
 
+  useEffect(() => {
+    console.log(date.getSeconds())
+  }, [date.getSeconds()])
+
   return (
     <div> 
-      <p>Timer {}</p>
+      <p>Timer: </p>
       <p>level: {level.toString()}</p>
       <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
   )
