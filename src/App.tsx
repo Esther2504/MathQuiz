@@ -12,6 +12,7 @@ const [type, setType] = useState('plus')
   return (
     <div className="App">
       <header className="App-header">
+        <div className='content'>
         <div className='menu'>
         <button onClick={() => setType('plus')}>Plus</button>
         <button onClick={() => setType('minus')}>Minus</button>
@@ -23,6 +24,7 @@ const [type, setType] = useState('plus')
        {type == 'plus' ?
       <Plus /> : type == 'minus' ? <Minus /> : type == 'multiply' ? <Multiply /> : type == 'divide' ? <Divide /> : <All />
        }
+       </div>
       </header>
     </div>
   );

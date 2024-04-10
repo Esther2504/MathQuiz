@@ -14,14 +14,30 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: url('./assets/images/appbackground.jpg');
+  background-position: center;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #333333;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.App-header::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #d9d6d697;
+  position: absolute;
+  top: 0;
+}
+
+.content {
+  z-index: 2;
 }
 
 .App-link {
@@ -29,7 +45,7 @@
 }
 
 .menu {
-  width: 400px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
 }
@@ -37,8 +53,9 @@
 .menu button {
  border: none;
  outline: none;
- background-color: green;
+ background-color: #586071;
  color: #fff;
+ padding: 0.5rem 2rem;
 }
 
 @keyframes App-logo-spin {
