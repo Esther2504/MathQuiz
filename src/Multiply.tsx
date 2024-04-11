@@ -6,7 +6,7 @@ export default function Multiply() {
   const [number2, setNumber2] = useState(1)
   const [number3, setNumber3] = useState<Number>()
   const [guess, setGuess] = useState('')
-  const [level, setLevel] = useState<Number>(1)
+  const [level, setLevel] = useState<Number>(10)
   const [correct, setCorrect] = useState(0)
 
 
@@ -89,7 +89,7 @@ export default function Multiply() {
     }
 
   return (
-    <div> <p>level: {level.toString()}</p>
+    <div> <p>Level: {level.toString()}</p>
       <div>{number1} * {number2} {number3 ? `* ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
   )
 }

@@ -20,7 +20,6 @@ const [type, setType] = useState('plus')
         <button onClick={() => setType('divide')}>Divide</button>
         <button onClick={() => setType('all')}>All</button>
         </div>
-        <p>Points:</p>
        {type == 'plus' ?
       <Plus /> : type == 'minus' ? <Minus /> : type == 'multiply' ? <Multiply /> : type == 'divide' ? <Divide /> : <All />
        }

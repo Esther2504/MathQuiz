@@ -100,7 +100,7 @@ export default function Plus() {
   return (
     <div> 
       <p>Timer: </p>
-      <p>level: {level.toString()}</p>
+      <p>Level: {level.toString()}</p>
       <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
   )
 }
