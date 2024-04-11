@@ -56,6 +56,7 @@
  background-color: #586071;
  color: #fff;
  padding: 0.5rem 2rem;
+ cursor: pointer;
 }
 
 @keyframes App-logo-spin {
