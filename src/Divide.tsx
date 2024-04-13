@@ -16,9 +16,21 @@ const checkAnswer = (guess: string) => {
   
     if (Number(guess) === answer) {
       setCorrect(correct + 1)
+      setNumber()
+    }
+    
+      if (Number(guess) === answer) {
       if (level === 1) {
-        setNumber1(Math.round(Math.random() * 10))
+       console.log(number1)
+       console.log(number2)
+
+        if (number1 % number2 != 0) {
+          setNumber1(Math.round(Math.random() * 10))
         setNumber2(Math.round(Math.random() * 10))
+        console.log(number1)
+       console.log(number2)
+        }
+
         if (correct === 10) {
           setLevel(2)
         }
@@ -85,6 +97,11 @@ const checkAnswer = (guess: string) => {
       }
       (document.getElementById('guess') as HTMLInputElement).value = ''
     }
+  }
+
+  function setNumber() {
+    setNumber1(Math.round(Math.random() * 10))
+    setNumber2(Math.round(Math.random() * 10))
   }
 
   return (
