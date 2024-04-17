@@ -4,15 +4,21 @@ import { useState } from 'react'
 export default function Divide() {
 const [number1, setNumber1] = useState(1)
 const [number2, setNumber2] = useState(1)
-const [number3, setNumber3] = useState<Number>()
+const [number3, setNumber3] = useState<number>()
 const [guess, setGuess] = useState('')
-const [level, setLevel] = useState<Number>(1)
+const [level, setLevel] = useState(10)
 const [correct, setCorrect] = useState(0)
 
 const checkAnswer = (guess: string) => {
   let answer;
 
+  if (level > 6 && number3 != undefined) {
+    answer = number1 / number2 / number3
+  } else {
     answer = number1 / number2
+  }
+
+  console.log(answer)
   
     if (Number(guess) === answer) {
       setCorrect(correct + 1)
@@ -23,10 +29,10 @@ const checkAnswer = (guess: string) => {
       if (level === 1) {
 
        let newNumber1 = Math.round(Math.random() * 20);
-       let newNumber2 = Math.round(Math.random() * 10);
+       let newNumber2 = Math.round(Math.random() * 20);
 
        while (newNumber1 % newNumber2 != 0) {
-        newNumber2 = Math.round(Math.random() * 10);
+        newNumber2 = Math.round(Math.random() * 20);
       }  
 
       setNumber1(newNumber1)
@@ -38,7 +44,7 @@ const checkAnswer = (guess: string) => {
 
       } else if (level === 2) {
         let newNumber1 = Math.round(Math.random() * 50);
-        let newNumber2 = Math.round(Math.random() * 10);
+        let newNumber2 = Math.round(Math.random() * 20);
  
         while (newNumber1 % newNumber2 != 0) {
          newNumber2 = Math.round(Math.random() * 10);
@@ -93,7 +99,7 @@ const checkAnswer = (guess: string) => {
         let newNumber2 = Math.round(Math.random() * 20);
         let newNumber3 = Math.round(Math.random() * 20);
  
-        while (newNumber1 % newNumber2 != 0) {
+        while (newNumber1 % newNumber2 % newNumber3 != 0) {
          newNumber3 = Math.round(Math.random() * 20);
        }  
  
@@ -109,7 +115,7 @@ const checkAnswer = (guess: string) => {
         let newNumber2 = Math.round(Math.random() * 50);
         let newNumber3 = Math.round(Math.random() * 50);
 
-        while (newNumber1 % newNumber2 != 0) {
+        while (newNumber1 % newNumber2 % newNumber3 != 0) {
          newNumber3 = Math.round(Math.random() * 50);
        }  
  
@@ -124,7 +130,7 @@ const checkAnswer = (guess: string) => {
         let newNumber2 = Math.round(Math.random() * 100);
         let newNumber3 = Math.round(Math.random() * 100);
  
-        while (newNumber1 % newNumber2 != 0) {
+        while (newNumber1 % newNumber2 % newNumber3 != 0) {
          newNumber3 = Math.round(Math.random() * 100);
        }  
  
@@ -139,7 +145,7 @@ const checkAnswer = (guess: string) => {
         let newNumber2 = Math.round(Math.random() * 500);
         let newNumber3 = Math.round(Math.random() * 500);
  
-        while (newNumber1 % newNumber2 != 0) {
+        while (newNumber1 % newNumber2 % newNumber3 != 0) {
          newNumber3 = Math.round(Math.random() * 500);
        }  
  
@@ -153,14 +159,22 @@ const checkAnswer = (guess: string) => {
         let newNumber1 = Math.round(Math.random() * 10000);
         let newNumber2 = Math.round(Math.random() * 1000);
         let newNumber3 = Math.round(Math.random() * 1000);
+
+        console.log(newNumber1 % newNumber2)
  
-        while (newNumber1 % newNumber2 != 0) {
+        while (newNumber1 % newNumber2 % newNumber3 != 0) {
+          console.log('more than 0')
+          console.log(answer)
          newNumber3 = Math.round(Math.random() * 1000);
        }  
  
-       setNumber1(newNumber1)
-       setNumber2(newNumber2)
-       setNumber3(newNumber3)
+       if (newNumber1 % newNumber2 % newNumber3 == 0) {
+        console.log('test')
+        setNumber1(newNumber1)
+        setNumber2(newNumber2)
+        setNumber3(newNumber3)
+       }
+
         if (correct === 100) {
           alert('Congrats')
         }

@@ -7,7 +7,7 @@ export default function Plus() {
   const [number3, setNumber3] = useState<Number>()
   const [timer, setTimer] = useState()
   const [guess, setGuess] = useState('')
-  const [level, setLevel] = useState<Number>(1)
+  const [level, setLevel] = useState<Number>(10)
   const [correct, setCorrect] = useState(0)
 
   const checkAnswer = (guess: string) => {
