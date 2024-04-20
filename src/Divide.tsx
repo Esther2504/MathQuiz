@@ -6,19 +6,13 @@ const [number1, setNumber1] = useState(1)
 const [number2, setNumber2] = useState(1)
 const [number3, setNumber3] = useState<number>()
 const [guess, setGuess] = useState('')
-const [level, setLevel] = useState(10)
+const [level, setLevel] = useState(1)
 const [correct, setCorrect] = useState(0)
 
 const checkAnswer = (guess: string) => {
   let answer;
 
-  if (level > 6 && number3 != undefined) {
-    answer = number1 / number2 / number3
-  } else {
     answer = number1 / number2
-  }
-
-  console.log(answer)
   
     if (Number(guess) === answer) {
       setCorrect(correct + 1)
@@ -47,7 +41,7 @@ const checkAnswer = (guess: string) => {
         let newNumber2 = Math.round(Math.random() * 20);
  
         while (newNumber1 % newNumber2 != 0) {
-         newNumber2 = Math.round(Math.random() * 10);
+         newNumber2 = Math.round(Math.random() * 20);
        }  
  
        setNumber1(newNumber1)
@@ -60,7 +54,7 @@ const checkAnswer = (guess: string) => {
         let newNumber2 = Math.round(Math.random() * 20);
  
         while (newNumber1 % newNumber2 != 0) {
-         newNumber2 = Math.round(Math.random() * 10);
+         newNumber2 = Math.round(Math.random() * 20);
        }  
  
        setNumber1(newNumber1)
@@ -95,85 +89,73 @@ const checkAnswer = (guess: string) => {
           setLevel(6)
         }
       } else if (level === 6) {
-        let newNumber1 = Math.round(Math.random() * 100);
-        let newNumber2 = Math.round(Math.random() * 20);
-        let newNumber3 = Math.round(Math.random() * 20);
+        let newNumber1 = Math.round(Math.random() * 2000);
+        let newNumber2 = Math.round(Math.random() * 200);
  
-        while (newNumber1 % newNumber2 % newNumber3 != 0) {
-         newNumber3 = Math.round(Math.random() * 20);
+        while (newNumber1 % newNumber2 != 0) {
+          newNumber2 = Math.round(Math.random() * 200);
        }  
  
        setNumber1(newNumber1)
        setNumber2(newNumber2)
-       setNumber3(newNumber3)
 
         if (correct === 60) {
           setLevel(7)
         }
       } else if (level === 7) {
-        let newNumber1 = Math.round(Math.random() * 500);
-        let newNumber2 = Math.round(Math.random() * 50);
-        let newNumber3 = Math.round(Math.random() * 50);
+        let newNumber1 = Math.round(Math.random() * 5000);
+        let newNumber2 = Math.round(Math.random() * 500);
 
-        while (newNumber1 % newNumber2 % newNumber3 != 0) {
-         newNumber3 = Math.round(Math.random() * 50);
+        while (newNumber1 % newNumber2 != 0) {
+          newNumber2 = Math.round(Math.random() * 500);
        }  
  
        setNumber1(newNumber1)
        setNumber2(newNumber2)
-       setNumber3(newNumber3)
+
         if (correct === 70) {
           setLevel(8)
         }
       } else if (level === 8) {
-        let newNumber1 = Math.round(Math.random() * 1000);
-        let newNumber2 = Math.round(Math.random() * 100);
-        let newNumber3 = Math.round(Math.random() * 100);
+        let newNumber1 = Math.round(Math.random() * 10000);
+        let newNumber2 = Math.round(Math.random() * 1000);
  
-        while (newNumber1 % newNumber2 % newNumber3 != 0) {
-         newNumber3 = Math.round(Math.random() * 100);
+        while (newNumber1 % newNumber2 != 0) {
+         newNumber2 = Math.round(Math.random() * 1000);
        }  
  
        setNumber1(newNumber1)
        setNumber2(newNumber2)
-       setNumber3(newNumber3)
+
         if (correct === 80) {
           setLevel(9)
         }
       } else if (level === 9) {
-        let newNumber1 = Math.round(Math.random() * 5000);
-        let newNumber2 = Math.round(Math.random() * 500);
-        let newNumber3 = Math.round(Math.random() * 500);
+        let newNumber1 = Math.round(Math.random() * 20000);
+        let newNumber2 = Math.round(Math.random() * 2000);
  
-        while (newNumber1 % newNumber2 % newNumber3 != 0) {
-         newNumber3 = Math.round(Math.random() * 500);
+        while (newNumber1 % newNumber2 != 0) {
+          newNumber2 = Math.round(Math.random() * 2000);
        }  
  
        setNumber1(newNumber1)
        setNumber2(newNumber2)
-       setNumber3(newNumber3)
+
         if (correct === 90) {
           setLevel(10)
         }
       } else if (level === 10) {
-        let newNumber1 = Math.round(Math.random() * 10000);
-        let newNumber2 = Math.round(Math.random() * 1000);
-        let newNumber3 = Math.round(Math.random() * 1000);
+        let newNumber1 = Math.round(Math.random() * 50000);
+        let newNumber2 = Math.round(Math.random() * 5000);
 
         console.log(newNumber1 % newNumber2)
  
-        while (newNumber1 % newNumber2 % newNumber3 != 0) {
-          console.log('more than 0')
-          console.log(answer)
-         newNumber3 = Math.round(Math.random() * 1000);
+        while (newNumber1 % newNumber2 != 0) {
+          newNumber2 = Math.round(Math.random() * 5000);
        }  
- 
-       if (newNumber1 % newNumber2 % newNumber3 == 0) {
-        console.log('test')
+
         setNumber1(newNumber1)
         setNumber2(newNumber2)
-        setNumber3(newNumber3)
-       }
 
         if (correct === 100) {
           alert('Congrats')
@@ -190,6 +172,6 @@ const checkAnswer = (guess: string) => {
 
   return (
     <div> <p>Level: {level.toString()}</p>
-    <div>{number1} / {number2} {number3 ? `/ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
+    <div>{number1} / {number2} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
   )
 }
