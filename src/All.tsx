@@ -4,7 +4,7 @@ import { useState } from 'react'
 export default function All() {
   const [number1, setNumber1] = useState(1)
   const [number2, setNumber2] = useState(1)
-  const [number3, setNumber3] = useState(1)
+  const [number3, setNumber3] = useState<Number>()
   const [operation, setOperation] = useState('+')
   const [operation2, setOperation2] = useState('+')
   const [guess, setGuess] = useState('')
@@ -18,6 +18,7 @@ export default function All() {
     console.log(operation)
     if (operation === '+') {
       answer = number1 + number2
+      console.log(answer)
     } else if (operation === '-') {
       answer = number1 - number2
     } else if (operation === '/') {

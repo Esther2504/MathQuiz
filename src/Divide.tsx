@@ -22,7 +22,7 @@ const checkAnswer = (guess: string) => {
       if (Number(guess) === answer) {
       if (level === 1) {
 
-       let newNumber1 = Math.round(Math.random() * 20);
+       let newNumber1 = Math.round(Math.random() * 30);
        let newNumber2 = Math.round(Math.random() * 20);
 
        while (newNumber1 % newNumber2 != 0) {
