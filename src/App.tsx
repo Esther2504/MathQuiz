@@ -5,9 +5,33 @@ import Minus from './Minus'
 import Multiply from './Multiply';
 import Divide from './Divide';
 import All from './All';
+import checkMultiplyAnswer from './MultiplyFunction';
 
 function App() {
 const [type, setType] = useState('plus')
+const [plusLevel, setPlusLevel] = useState<number>(1)
+const [minusLevel, setMinusLevel] = useState<number>(1)
+const [multiplyLevel, setMultiplyLevel] = useState<number>(1)
+const [divideLevel, setDivideLevel] = useState<number>(1)
+const [allLevel, setAllLevel] = useState<number>(1)
+const [number1, setNumber1] = useState(1)
+const [number2, setNumber2] = useState(1)
+const [number3, setNumber3] = useState(0)
+const [guess, setGuess] = useState('')
+const [level, setLevel] = useState<number>(1)
+const [correct, setCorrect] = useState(0)
+
+const checkAnswer = (guess: string) => {
+if (type == 'plus') {
+  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+} else if (type == 'minus') {
+  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+} else if (type == 'multiply') {
+  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+} else {
+  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+}
+}
 
   return (
     <div className="App">
@@ -23,6 +47,10 @@ const [type, setType] = useState('plus')
        {type == 'plus' ?
       <Plus /> : type == 'minus' ? <Minus /> : type == 'multiply' ? <Multiply /> : type == 'divide' ? <Divide /> : <All />
        }
+         {/* {type == 'plus' ?
+      <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div> 
+      : type == 'minus' ? <Minus /> : type == 'multiply' ? <Multiply /> : type == 'divide' ? <Divide /> : <All />
+       } */}
        </div>
       </header>
     </div>
