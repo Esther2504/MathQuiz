@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Divide from './Divide'
 
 export default function All() {
   const [number1, setNumber1] = useState(1)
@@ -32,6 +33,16 @@ export default function All() {
         setNumber1(Math.round(Math.random() * 10))
         setNumber2(Math.round(Math.random() * 10))
         setOperation(operations[Math.round(Math.random() * 2)])
+
+        if (operation == '/') {
+          let newNumber1 = Math.round(Math.random() * 20);
+          let newNumber2 = Math.round(Math.random() * 10);
+   
+          while (newNumber1 % newNumber2 != 0) {
+           newNumber2 = Math.round(Math.random() * 10);
+         }  
+   
+        }
         if (correct === 10) {
           setLevel(2)
         }
@@ -91,6 +102,7 @@ export default function All() {
       } else if (level === 9) {
         setNumber1(Math.round(Math.random() * 200))
         setNumber2(Math.round(Math.random() * 300))
+        setNumber3(Math.round(Math.random() * 300))
         setOperation(operations[Math.round(Math.random() * 2)])
         if (correct === 90) {
           setLevel(10)
@@ -109,7 +121,9 @@ export default function All() {
   }
     
   return (
-    <div> <p>Level: {level.toString()}</p>
-    <div>{number1} {operation} {number2} {number3 ? `${operation2} ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
+    <div> 
+    <p>Level: {level.toString()}</p>
+    <div>{number1} {operation} {number2} {number3 ? `${operation2} ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+    </div>
   )
 }
