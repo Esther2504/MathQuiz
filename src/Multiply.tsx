@@ -2,17 +2,24 @@ import React from 'react'
 import { useState } from 'react'
 import checkMultiplyAnswer from './MultiplyFunction'
 
-export default function Multiply() {
-  const [number1, setNumber1] = useState(1)
-  const [number2, setNumber2] = useState(1)
+interface Props {
+  checkAnswer: any;
+  number1: number;
+  number2: number;
+  level: number;
+}
+
+export default function Multiply({checkAnswer, number1, number2, level}: Props) {
+  // const [number1, setNumber1] = useState(1)
+  // const [number2, setNumber2] = useState(1)
   const [number3, setNumber3] = useState(0)
   const [guess, setGuess] = useState('')
-  const [level, setLevel] = useState<number>(1)
+  // const [level, setLevel] = useState<number>(1)
   const [correct, setCorrect] = useState(0)
 
-  const checkAnswer = (guess: string) => {
-checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
-  }
+//   const checkAnswer = (guess: string) => {
+// checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+//   }
 
   // const checkAnswer = (guess: string) => {
   //   let answer;

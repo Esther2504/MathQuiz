@@ -3,25 +3,28 @@ let checkMultiplyAnswer = (guess: string, setNumber1: any, setNumber2: any, setN
 
       answer = number1 * number2
 
+      console.log(guess)
+      console.log(answer)
+
       if (Number(guess) === answer) {
         setCorrect(correct + 1)
         if (level === 1) {
           setNumber1(Math.round(Math.random() * 5))
-          setNumber2(Math.round(Math.random() * 5))
+          setNumber2(Math.round(Math.random() * 10))
           if (correct === 10) {
             setLevel(2)
           }
   
         } else if (level === 2) {
           setNumber1(Math.round(Math.random() * 10))
-          setNumber2(Math.round(Math.random() * 10))
+          setNumber2(Math.round(Math.random() * 20))
           setCorrect(correct + 1)
           if (correct === 20) {
             setLevel(3)
           }
         } else if (level === 3) {
           setNumber1(Math.round(Math.random() * 20))
-          setNumber2(Math.round(Math.random() * 20))
+          setNumber2(Math.round(Math.random() * 30))
           if (correct === 30) {
             setLevel(4)
           }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Plus from './Plus';
 import Minus from './Minus'
@@ -18,20 +18,31 @@ const [number1, setNumber1] = useState(1)
 const [number2, setNumber2] = useState(1)
 const [number3, setNumber3] = useState(0)
 const [guess, setGuess] = useState('')
-const [level, setLevel] = useState<number>(1)
+const [level, setLevel] = useState(1)
 const [correct, setCorrect] = useState(0)
 
 const checkAnswer = (guess: string) => {
+
+  
 if (type == 'plus') {
   checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
 } else if (type == 'minus') {
   checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
 } else if (type == 'multiply') {
+  console.log(guess)
   checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
 } else {
   checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
 }
 }
+
+// let currentDate = new Date
+// console.log(currentDate.getSeconds())
+// console.log(Date.now() / (1000 * 60 * 60 * 24))
+
+// useEffect(() => {
+
+// }, [])
 
   return (
     <div className="App">
@@ -45,7 +56,7 @@ if (type == 'plus') {
         <button onClick={() => setType('all')}>All</button>
         </div>
        {type == 'plus' ?
-      <Plus /> : type == 'minus' ? <Minus /> : type == 'multiply' ? <Multiply /> : type == 'divide' ? <Divide /> : <All />
+      <Plus /> : type == 'minus' ? <Minus /> : type == 'multiply' ? <Multiply checkAnswer={checkAnswer} number1={number1} number2={number2} level={level} /> : type == 'divide' ? <Divide /> : <All />
        }
          {/* {type == 'plus' ?
       <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div> 
