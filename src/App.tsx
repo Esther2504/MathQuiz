@@ -6,6 +6,7 @@ import Multiply from './Multiply';
 import Divide from './Divide';
 import All from './All';
 import checkMultiplyAnswer from './MultiplyFunction';
+import checkPlusAnswer from './PlusFunction';
 
 function App() {
 const [type, setType] = useState('plus')
@@ -25,12 +26,12 @@ const checkAnswer = (guess: string) => {
 
   
 if (type == 'plus') {
-  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+  checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setPlusLevel, level)
 } else if (type == 'minus') {
   checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
 } else if (type == 'multiply') {
   console.log(guess)
-  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMultiplyLevel, level)
 } else {
   checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
 }
@@ -56,7 +57,13 @@ if (type == 'plus') {
         <button onClick={() => setType('all')}>All</button>
         </div>
        {type == 'plus' ?
-      <Plus /> : type == 'minus' ? <Minus /> : type == 'multiply' ? <Multiply checkAnswer={checkAnswer} number1={number1} number2={number2} level={level} /> : type == 'divide' ? <Divide /> : <All />
+          <div> 
+          <p>Level: {plusLevel.toString()}</p>
+          <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
+          : type == 'minus' ? <Minus /> 
+          : type == 'multiply' ? <Multiply checkAnswer={checkAnswer} number1={number1} number2={number2} level={level} /> 
+          : type == 'divide' ? <Divide /> 
+          : <All />
        }
          {/* {type == 'plus' ?
       <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div> 
