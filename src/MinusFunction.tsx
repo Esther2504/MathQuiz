@@ -1,17 +1,5 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-
-export default function Minus() {
-  const [number1, setNumber1] = useState(1)
-  const [number2, setNumber2] = useState(1)
-  const [number3, setNumber3] = useState<Number>()
-  const [timer, setTimer] = useState()
-  const [guess, setGuess] = useState('')
-  const [level, setLevel] = useState<Number>(1)
-  const [correct, setCorrect] = useState(0)
-
-  const checkAnswer = (guess: string) => {
-      let answer = number1 - number2
+let checkMinusAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber3: any, number1: number, number2: number, number3: number, setCorrect: any, correct: number, setLevel: any, level: number) => {
+    let answer = number1 - number2
 
     if (Number(guess) === answer) {
       setCorrect(correct + 1)
@@ -181,10 +169,4 @@ export default function Minus() {
     }
   }
 
-  return (
-    <div> 
-      <p>Timer: </p>
-      <p>Level: {level.toString()}</p>
-      <div>{number1} - {number2} {number3 ? `- ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
-  )
-}
+export default checkMinusAnswer

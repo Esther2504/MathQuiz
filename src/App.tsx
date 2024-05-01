@@ -7,6 +7,7 @@ import Divide from './Divide';
 import All from './All';
 import checkMultiplyAnswer from './MultiplyFunction';
 import checkPlusAnswer from './PlusFunction';
+import checkMinusAnswer from './MinusFunction';
 
 function App() {
 const [type, setType] = useState('plus')
@@ -28,7 +29,7 @@ const checkAnswer = (guess: string) => {
 if (type == 'plus') {
   checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setPlusLevel, level)
 } else if (type == 'minus') {
-  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setLevel, level)
+  checkMinusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMinusLevel, level)
 } else if (type == 'multiply') {
   console.log(guess)
   checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMultiplyLevel, level)
@@ -60,8 +61,16 @@ if (type == 'plus') {
           <div> 
           <p>Level: {plusLevel.toString()}</p>
           <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
-          : type == 'minus' ? <Minus /> 
-          : type == 'multiply' ? <Multiply checkAnswer={checkAnswer} number1={number1} number2={number2} level={level} /> 
+          : type == 'minus' ? 
+          <div> 
+          <p>Level: {minusLevel.toString()}</p>
+          <div>{number1} - {number2} {number3 ? `- ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
+          : type == 'multiply' ? 
+          <div>
+          <p>Level: {multiplyLevel.toString()}</p>
+          <div>{number1} x {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+          </div>
+         
           : type == 'divide' ? <Divide /> 
           : <All />
        }
