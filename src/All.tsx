@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import Divide from './Divide'
 
 export default function All() {
   const [number1, setNumber1] = useState(1)
