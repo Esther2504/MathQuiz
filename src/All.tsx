@@ -11,7 +11,7 @@ export default function All() {
   const [level, setLevel] = useState<Number>(1)
   const [correct, setCorrect] = useState(0)
 
-  const operations = ['+', '-', 'x']
+  const operations = ['+', '-', 'x', '/']
 
   const checkAnswer = (guess: string) => {
     let answer;

@@ -14,7 +14,6 @@ let checkPlusAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumbe
       } else if (level === 2) {
         setNumber1(Math.round(Math.random() * 50))
         setNumber2(Math.round(Math.random() * 50))
-        setCorrect(correct + 1)
         if (correct === 20) {
           setLevel(3)
         }

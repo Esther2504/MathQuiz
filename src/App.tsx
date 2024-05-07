@@ -22,14 +22,13 @@ const [correct, setCorrect] = useState(0)
 
 const checkAnswer = (guess: string) => {
 if (type == 'plus') {
-  checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setPlusLevel, level)
+  checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setPlusLevel, plusLevel)
 } else if (type == 'minus') {
-  checkMinusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMinusLevel, level)
+  checkMinusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMinusLevel, minusLevel)
 } else if (type == 'multiply') {
-  console.log(guess)
-  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMultiplyLevel, level)
+  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMultiplyLevel, multiplyLevel)
 } else {
-  checkDivideAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setDivideLevel, level)
+  checkDivideAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setDivideLevel, divideLevel)
 }
 }
 
