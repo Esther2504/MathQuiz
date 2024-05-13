@@ -1,7 +1,12 @@
 let checkMultiplyAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber3: any, number1: number, number2: number, number3: number, setCorrect: any, correct: number, setLevel: any, level: number) => {
     let answer;
 
+    if (number3 != 0) {
+      answer = number1 * number2 * number3
+    } else {
       answer = number1 * number2
+    }
+     
 
       if (Number(guess) === answer) {
         setCorrect(correct + 1)
