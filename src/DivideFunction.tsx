@@ -4,13 +4,13 @@ let checkDivideAnswer = (guess: string, setNumber1: any, setNumber2: any, setNum
   if (Number(guess) === answer) {
     setCorrect(correct + 1)
 
-    setNewNumbers(setNumber1, setNumber2, setNumber3, correct, setLevel);
-    
+    setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correct, setLevel);
+
     (document.getElementById('guess') as HTMLInputElement).value = ''
   }
 }
 
-export let setNewNumbers = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any) => {
+export let setNewNumbersDivide = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any) => {
   if (correct < 9) {
     let newNumber1 = Math.round(Math.random() * 30);
     let newNumber2 = Math.round(Math.random() * 20);

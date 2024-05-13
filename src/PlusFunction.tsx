@@ -4,13 +4,13 @@ let checkPlusAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumbe
   if (Number(guess) === answer) {
     setCorrect(correct + 1);
 
-    setNewNumbers(setNumber1, setNumber2, setNumber3, correct, setLevel);
+    setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correct, setLevel);
 
     (document.getElementById('guess') as HTMLInputElement).value = ''
   }
 }
 
-export let setNewNumbers = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any) => {
+export let setNewNumbersPlus = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any) => {
     if (correct < 9) {
       setNumber1(Math.round(Math.random() * 10))
       setNumber2(Math.round(Math.random() * 10))

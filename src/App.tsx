@@ -5,6 +5,10 @@ import checkMultiplyAnswer from './MultiplyFunction';
 import checkPlusAnswer from './PlusFunction';
 import checkMinusAnswer from './MinusFunction';
 import checkDivideAnswer from './DivideFunction';
+import { setNewNumbersMultiply } from './MultiplyFunction';
+import { setNewNumbersPlus } from './PlusFunction';
+import { setNewNumbersMinus } from './MinusFunction';
+import { setNewNumbersDivide } from './DivideFunction';
 
 function App() {
 const [type, setType] = useState('plus')
@@ -45,10 +49,10 @@ if (type == 'plus') {
       <header className="App-header">
         <div className='content'>
         <div className='menu'>
-        <button onClick={() => setType('plus')}>Plus</button>
-        <button onClick={() => setType('minus')}>Minus</button>
-        <button onClick={() => setType('multiply')}>Multiply</button>
-        <button onClick={() => setType('divide')}>Divide</button>
+        <button onClick={() => {setType('plus'); setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correct, setPlusLevel)}}>Plus</button>
+        <button onClick={() => {setType('minus'); setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correct, setMinusLevel)}}>Minus</button>
+        <button onClick={() => {setType('multiply'); setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correct, setMultiplyLevel)}}>Multiply</button>
+        <button onClick={() => {setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correct, setDivideLevel)}}>Divide</button>
         <button onClick={() => setType('all')}>All</button>
         </div>
        {type == 'plus' ?
