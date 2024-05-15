@@ -14,22 +14,27 @@ export let setNewNumbersPlus = (setNumber1: any, setNumber2: any, setNumber3: an
     if (correct < 9) {
       setNumber1(Math.round(Math.random() * 10))
       setNumber2(Math.round(Math.random() * 10))
+      setNumber3(0)
     } else if (correct < 19) {
       setLevel(2)
       setNumber1(Math.round(Math.random() * 50))
       setNumber2(Math.round(Math.random() * 50))
+      setNumber3(0)
     } else if (correct < 29) {
       setLevel(3)
       setNumber1(Math.round(Math.random() * 100))
       setNumber2(Math.round(Math.random() * 100))
+      setNumber3(0)
     } else if (correct < 39) {
       setLevel(4)
       setNumber1(Math.round(Math.random() * 500))
       setNumber2(Math.round(Math.random() * 500))
+      setNumber3(0)
     } else if (correct < 49) {
       setLevel(5)
       setNumber1(Math.round(Math.random() * 1000))
       setNumber2(Math.round(Math.random() * 1000))
+      setNumber3(0)
     } else if (correct < 59) {
       setLevel(6)
       setNumber1(Math.round(Math.random() * 100))

@@ -21,6 +21,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
 
     setNumber1(newNumber1)
     setNumber2(newNumber2)
+    setNumber3(0)
   } else if (correct < 19) {
     setLevel(2)
     let newNumber1 = Math.round(Math.random() * 50);
@@ -32,6 +33,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
 
     setNumber1(newNumber1)
     setNumber2(newNumber2)
+    setNumber3(0)
   } else if (correct < 29) {
     setLevel(3)
     let newNumber1 = Math.round(Math.random() * 100);
@@ -43,6 +45,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
 
     setNumber1(newNumber1)
     setNumber2(newNumber2)
+    setNumber3(0)
   } else if (correct < 39) {
     setLevel(4)
     let newNumber1 = Math.round(Math.random() * 500);
@@ -54,6 +57,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
 
     setNumber1(newNumber1)
     setNumber2(newNumber2)
+    setNumber3(0)
   } else if (correct < 49) {
     setLevel(5)
    
@@ -66,6 +70,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
 
     setNumber1(newNumber1)
     setNumber2(newNumber2)
+    setNumber3(0)
   } else if (correct < 59) {
     setLevel(6)
     let newNumber1 = Math.round(Math.random() * 100);

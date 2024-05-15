@@ -20,9 +20,6 @@ const [allLevel, setAllLevel] = useState<number>(1)
 const [number1, setNumber1] = useState(1)
 const [number2, setNumber2] = useState(1)
 const [number3, setNumber3] = useState(0)
-const [guess, setGuess] = useState('')
-const [level, setLevel] = useState(1)
-const [correct, setCorrect] = useState(0)
 const [correctPlus, setCorrectPlus] = useState(0)
 const [correctMinus, setCorrectMinus] = useState(0)
 const [correctMultiply, setCorrectMultiply] = useState(0)
@@ -50,17 +47,15 @@ if (type == 'plus') {
 
 console.log(number1 + number2 + number3)
 
-console.log(correct)
-
   return (
     <div className="App">
       <header className="App-header">
         <div className='content'>
         <div className='menu'>
-        <button onClick={() => {setType('plus'); setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correct, setPlusLevel)}}>Plus</button>
-        <button onClick={() => {setType('minus'); setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correct, setMinusLevel)}}>Minus</button>
-        <button onClick={() => {setType('multiply'); setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correct, setMultiplyLevel)}}>Multiply</button>
-        <button onClick={() => {setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correct, setDivideLevel)}}>Divide</button>
+        <button onClick={() => {setType('plus'); setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctPlus, setPlusLevel)}}>Plus</button>
+        <button onClick={() => {setType('minus'); setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctMinus, setMinusLevel)}}>Minus</button>
+        <button onClick={() => {setType('multiply'); setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctMultiply, setMultiplyLevel)}}>Multiply</button>
+        <button onClick={() => {setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctDivide, setDivideLevel)}}>Divide</button>
         <button onClick={() => setType('all')}>All</button>
         </div>
        {type == 'plus' ?

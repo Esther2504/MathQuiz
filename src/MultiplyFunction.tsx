@@ -21,22 +21,27 @@ let checkMultiplyAnswer = (guess: string, setNumber1: any, setNumber2: any, setN
       if (correct < 9) {
         setNumber1(Math.round(Math.random() * 5))
         setNumber2(Math.round(Math.random() * 10))
+        setNumber3(0)
       } else if (correct < 19) {
         setLevel(2)
         setNumber1(Math.round(Math.random() * 10))
         setNumber2(Math.round(Math.random() * 20))
+        setNumber3(0)
       } else if (correct < 29) {
         setLevel(3)
         setNumber1(Math.round(Math.random() * 20))
         setNumber2(Math.round(Math.random() * 30))
+        setNumber3(0)
       } else if (correct < 39) {
         setLevel(4)
         setNumber1(Math.round(Math.random() * 50))
         setNumber2(Math.round(Math.random() * 50))
+        setNumber3(0)
       } else if (correct < 49) {
         setLevel(5)
         setNumber1(Math.round(Math.random() * 100))
         setNumber2(Math.round(Math.random() * 100))
+        setNumber3(0)
       } else if (correct < 59) {
         setLevel(6)
         setNumber1(Math.round(Math.random() * 20))
