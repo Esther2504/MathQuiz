@@ -23,16 +23,20 @@ const [number3, setNumber3] = useState(0)
 const [guess, setGuess] = useState('')
 const [level, setLevel] = useState(1)
 const [correct, setCorrect] = useState(0)
+const [correctPlus, setCorrectPlus] = useState(0)
+const [correctMinus, setCorrectMinus] = useState(0)
+const [correctMultiply, setCorrectMultiply] = useState(0)
+const [correctDivide, setCorrectDivide] = useState(0)
 
 const checkAnswer = (guess: string) => {
 if (type == 'plus') {
-  checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setPlusLevel, plusLevel)
+  checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectPlus, correctPlus, setPlusLevel, plusLevel)
 } else if (type == 'minus') {
-  checkMinusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMinusLevel, minusLevel)
+  checkMinusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectMinus, correctMinus, setMinusLevel, minusLevel)
 } else if (type == 'multiply') {
-  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setMultiplyLevel, multiplyLevel)
+  checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectMultiply, correctMultiply, setMultiplyLevel, multiplyLevel)
 } else {
-  checkDivideAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrect, correct, setDivideLevel, divideLevel)
+  checkDivideAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectDivide, correctDivide, setDivideLevel, divideLevel)
 }
 }
 
@@ -43,6 +47,10 @@ if (type == 'plus') {
 // useEffect(() => {
 
 // }, [])
+
+console.log(number1 + number2 + number3)
+
+console.log(correct)
 
   return (
     <div className="App">
