@@ -11,7 +11,8 @@ let checkPlusAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumbe
 }
 
 export let setNewNumbersPlus = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any) => {
-    if (correct < 9) {
+
+  if (correct < 9) {
       setNumber1(Math.round(Math.random() * 10))
       setNumber2(Math.round(Math.random() * 10))
       setNumber3(0)
@@ -20,6 +21,7 @@ export let setNewNumbersPlus = (setNumber1: any, setNumber2: any, setNumber3: an
       setNumber1(Math.round(Math.random() * 50))
       setNumber2(Math.round(Math.random() * 50))
       setNumber3(0)
+      console.log(correct) 
     } else if (correct < 29) {
       setLevel(3)
       setNumber1(Math.round(Math.random() * 100))

@@ -11,7 +11,7 @@ let checkDivideAnswer = (guess: string, setNumber1: any, setNumber2: any, setNum
 }
 
 export let setNewNumbersDivide = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any) => {
-  if (correct < 9) {
+   if (correct < 9) {
     let newNumber1 = Math.round(Math.random() * 30);
     let newNumber2 = Math.round(Math.random() * 20);
 
@@ -26,7 +26,7 @@ export let setNewNumbersDivide = (setNumber1: any, setNumber2: any, setNumber3: 
     setLevel(2)
     let newNumber1 = Math.round(Math.random() * 50);
     let newNumber2 = Math.round(Math.random() * 20);
-
+    console.log(correct) 
     while (newNumber1 % newNumber2 != 0) {
       newNumber2 = Math.round(Math.random() * 20);
     }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import All from './All';
+// import All from './All';
 import checkMultiplyAnswer from './MultiplyFunction';
 import checkPlusAnswer from './PlusFunction';
 import checkMinusAnswer from './MinusFunction';
@@ -29,6 +29,7 @@ function App() {
   const [operator, setOperator] = useState('+')
 
   const checkAnswer = (guess: string) => {
+    console.log(correctAll + ' correct')
     if (type == 'plus') {
       checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectPlus, correctPlus, setPlusLevel, plusLevel)
     } else if (type == 'minus') {
@@ -41,26 +42,9 @@ function App() {
       checkAllAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectAll, correctAll, setAllLevel, allLevel, operator, setOperator, setNewNumbersPlus, setNewNumbersMinus, setNewNumbersMultiply, setNewNumbersDivide)
     }
   }
-
-
-  // useEffect(() => {
-  //   if (type == 'all') {
-  //     let random = Math.round(Math.random() * 4)
-  //     if (random == 1) {
-  //       setOperator('+')
-  //       setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-  //     } else if (random == 2) {
-  //       setOperator('-')
-  //       setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-  //     } else if (random == 3) {
-  //       setOperator('*')
-  //       setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-  //     } else {
-  //       setOperator('/')
-  //       setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-  //     }
-  //   }
-  // }, [])
+useEffect(() => {
+console.log(correctAll)
+}, [number1])
 
   return (
     <div className="App">

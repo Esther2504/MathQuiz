@@ -27,6 +27,7 @@ let checkMultiplyAnswer = (guess: string, setNumber1: any, setNumber2: any, setN
         setNumber1(Math.round(Math.random() * 10))
         setNumber2(Math.round(Math.random() * 20))
         setNumber3(0)
+        console.log(correct) 
       } else if (correct < 29) {
         setLevel(3)
         setNumber1(Math.round(Math.random() * 20))

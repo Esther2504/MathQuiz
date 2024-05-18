@@ -11,10 +11,11 @@ let checkMinusAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumb
 }
 
 export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any) => {
+  console.log(correct) 
   if (correct < 9) {
     let newNumber1 = Math.round(Math.random() * 20);
     let newNumber2 = Math.round(Math.random() * 10);
-
+    
     while (newNumber1 < newNumber2) {
       newNumber2 = Math.round(Math.random() * 10);
     }
