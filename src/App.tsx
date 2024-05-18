@@ -5,6 +5,7 @@ import checkMultiplyAnswer from './MultiplyFunction';
 import checkPlusAnswer from './PlusFunction';
 import checkMinusAnswer from './MinusFunction';
 import checkDivideAnswer from './DivideFunction';
+import checkAllAnswer from './AllFunction';
 import { setNewNumbersMultiply } from './MultiplyFunction';
 import { setNewNumbersPlus } from './PlusFunction';
 import { setNewNumbersMinus } from './MinusFunction';
@@ -34,31 +35,32 @@ function App() {
       checkMinusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectMinus, correctMinus, setMinusLevel, minusLevel)
     } else if (type == 'multiply') {
       checkMultiplyAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectMultiply, correctMultiply, setMultiplyLevel, multiplyLevel)
-    } else {
+    } else if (type == 'divide') {
       checkDivideAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectDivide, correctDivide, setDivideLevel, divideLevel)
+    } else {
+      checkAllAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectAll, correctAll, setAllLevel, allLevel, operator, setOperator, setNewNumbersPlus, setNewNumbersMinus, setNewNumbersMultiply, setNewNumbersDivide)
     }
   }
 
-  console.log(number1 + number2 + number3)
 
-  useEffect(() => {
-    if (type == 'all') {
-      let random = Math.round(Math.random() * 4)
-      if (random == 1) {
-        setOperator('+')
-        setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-      } else if (random == 2) {
-        setOperator('-')
-        setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-      } else if (random == 3) {
-        setOperator('*')
-        setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-      } else {
-        setOperator('/')
-        setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
-      }
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (type == 'all') {
+  //     let random = Math.round(Math.random() * 4)
+  //     if (random == 1) {
+  //       setOperator('+')
+  //       setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
+  //     } else if (random == 2) {
+  //       setOperator('-')
+  //       setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
+  //     } else if (random == 3) {
+  //       setOperator('*')
+  //       setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
+  //     } else {
+  //       setOperator('/')
+  //       setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setCorrectAll)
+  //     }
+  //   }
+  // }, [])
 
   return (
     <div className="App">
@@ -90,7 +92,10 @@ function App() {
                     <div>{number1} / {number2} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
                   </div>
                   : 
-                  <All />
+                  <div>
+                  <p>Level: {allLevel.toString()}</p>
+                  <div>{number1} {operator} {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+                </div>
           }
         </div>
       </header>
