@@ -10,6 +10,7 @@ import { setNewNumbersMultiply } from './MultiplyFunction';
 import { setNewNumbersPlus } from './PlusFunction';
 import { setNewNumbersMinus } from './MinusFunction';
 import { setNewNumbersDivide } from './DivideFunction';
+import { setCommentRange } from 'typescript';
 
 function App() {
   const [type, setType] = useState('plus')
@@ -28,6 +29,25 @@ function App() {
   const [correctAll, setCorrectAll] = useState(0)
   const [operator, setOperator] = useState('+')
 
+  useEffect(() => {
+    if (localStorage.getItem('pluslevel') != '0') {
+      setCorrectPlus(Number(localStorage.getItem('pluslevel')))
+      
+      console.log(localStorage.getItem('pluslevel'))
+  
+    }
+  }, [])
+
+  useEffect(() => {
+    if (correctPlus > 0) {
+      localStorage.setItem('pluslevel', `${correctPlus}`)
+    }
+
+    setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctPlus, setPlusLevel)
+  
+  }, [correctPlus])
+  
+
   const checkAnswer = (guess: string) => {
     console.log(correctAll + ' correct')
     if (type == 'plus') {
@@ -42,9 +62,15 @@ function App() {
       checkAllAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectAll, correctAll, setAllLevel, allLevel, operator, setOperator, setNewNumbersPlus, setNewNumbersMinus, setNewNumbersMultiply, setNewNumbersDivide)
     }
   }
-useEffect(() => {
-console.log(correctAll)
-}, [number1])
+// useEffect(() => {
+// console.log(correctAll)
+// }, [number1])
+
+
+
+
+console.log(localStorage.getItem('pluslevel'))
+
 
   return (
     <div className="App">
