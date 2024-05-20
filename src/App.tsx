@@ -32,9 +32,9 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('pluslevel') != '0') {
       setCorrectPlus(Number(localStorage.getItem('pluslevel')))
-      
-      console.log(localStorage.getItem('pluslevel'))
-  
+    }
+    if (localStorage.getItem('minuslevel') != '0') {
+      setCorrectMinus(Number(localStorage.getItem('minuslevel')))
     }
   }, [])
 
@@ -42,10 +42,15 @@ function App() {
     if (correctPlus > 0) {
       localStorage.setItem('pluslevel', `${correctPlus}`)
     }
-
     setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctPlus, setPlusLevel)
-  
   }, [correctPlus])
+
+  useEffect(() => {
+    if (correctMinus > 0) {
+      localStorage.setItem('minuslevel', `${correctMinus}`)
+    }
+    setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctMinus, setMinusLevel)
+  }, [correctMinus])
   
 
   const checkAnswer = (guess: string) => {
