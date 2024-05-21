@@ -36,6 +36,15 @@ function App() {
     if (localStorage.getItem('minuslevel') != '0') {
       setCorrectMinus(Number(localStorage.getItem('minuslevel')))
     }
+    if (localStorage.getItem('multiplylevel') != '0') {
+      setCorrectMinus(Number(localStorage.getItem('multiplylevel')))
+    }
+    if (localStorage.getItem('dividelevel') != '0') {
+      setCorrectMinus(Number(localStorage.getItem('dividelevel')))
+    }
+    if (localStorage.getItem('alllevel') != '0') {
+      setCorrectMinus(Number(localStorage.getItem('alllevel')))
+    }
   }, [])
 
   useEffect(() => {
@@ -52,9 +61,28 @@ function App() {
     setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctMinus, setMinusLevel)
   }, [correctMinus])
   
+  useEffect(() => {
+    if (correctMultiply > 0) {
+      localStorage.setItem('multiplylevel', `${correctMultiply}`)
+    }
+    setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctMultiply, setMultiplyLevel)
+  }, [correctMultiply])
 
+  useEffect(() => {
+    if (correctDivide > 0) {
+      localStorage.setItem('dividelevel', `${correctDivide}`)
+    }
+    setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctDivide, setDivideLevel)
+  }, [correctDivide])
+
+  useEffect(() => {
+    if (correctAll > 0) {
+      localStorage.setItem('alllevel', `${correctAll}`)
+    }
+    // setNewNumbersAll(setNumber1, setNumber2, setNumber3, correctAll, setDivideLevel)
+  }, [correctDivide])
+  
   const checkAnswer = (guess: string) => {
-    console.log(correctAll + ' correct')
     if (type == 'plus') {
       checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectPlus, correctPlus, setPlusLevel, plusLevel)
     } else if (type == 'minus') {
@@ -67,15 +95,10 @@ function App() {
       checkAllAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectAll, correctAll, setAllLevel, allLevel, operator, setOperator, setNewNumbersPlus, setNewNumbersMinus, setNewNumbersMultiply, setNewNumbersDivide)
     }
   }
+
 // useEffect(() => {
 // console.log(correctAll)
 // }, [number1])
-
-
-
-
-console.log(localStorage.getItem('pluslevel'))
-
 
   return (
     <div className="App">
