@@ -37,13 +37,13 @@ function App() {
       setCorrectMinus(Number(localStorage.getItem('minuslevel')))
     }
     if (localStorage.getItem('multiplylevel') != '0') {
-      setCorrectMinus(Number(localStorage.getItem('multiplylevel')))
+      setCorrectMultiply(Number(localStorage.getItem('multiplylevel')))
     }
     if (localStorage.getItem('dividelevel') != '0') {
-      setCorrectMinus(Number(localStorage.getItem('dividelevel')))
+      setCorrectDivide(Number(localStorage.getItem('dividelevel')))
     }
     if (localStorage.getItem('alllevel') != '0') {
-      setCorrectMinus(Number(localStorage.getItem('alllevel')))
+      setCorrectAll(Number(localStorage.getItem('alllevel')))
     }
   }, [])
 

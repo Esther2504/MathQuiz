@@ -16,7 +16,6 @@ export let setNewNumbersPlus = (setNumber1: any, setNumber2: any, setNumber3: an
       setNumber1(Math.round(Math.random() * 10))
       setNumber2(Math.round(Math.random() * 10))
       setNumber3(0)
-      console.log(correct)
     } else if (correct < 19) {
       setLevel(2)
       setNumber1(Math.round(Math.random() * 50))
