@@ -21,10 +21,15 @@ let checkAllAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber
       if (Number(guess) === answer) {
         setCorrect(correct + 1)
 
-        let random = Math.round(Math.random() * 4)
+        let random = Math.round(Math.random() * 4);
 
-        console.log(correct)
+        setNewNumbersAll(setNumber1, setNumber2, setNumber3, correct, setLevel, random, setOperator, setNewNumbersPlus, setNewNumbersMinus, setNewNumbersMultiply, setNewNumbersDivide);
+     
+        (document.getElementById('guess') as HTMLInputElement).value = ''
+      }
+    }
 
+    export let setNewNumbersAll = (setNumber1: any, setNumber2: any, setNumber3: any, correct: number, setLevel: any, random: number, setOperator: any, setNewNumbersPlus: any, setNewNumbersMinus: any, setNewNumbersMultiply: any, setNewNumbersDivide: any) => {
       if (random == 1) {
         setOperator('+')
         setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correct, setLevel)
@@ -39,8 +44,7 @@ let checkAllAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber
         setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correct, setLevel)
       }
 
-        (document.getElementById('guess') as HTMLInputElement).value = ''
-      }
     }
+    
 
     export default checkAllAnswer

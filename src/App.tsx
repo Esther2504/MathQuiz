@@ -10,6 +10,7 @@ import { setNewNumbersMultiply } from './MultiplyFunction';
 import { setNewNumbersPlus } from './PlusFunction';
 import { setNewNumbersMinus } from './MinusFunction';
 import { setNewNumbersDivide } from './DivideFunction';
+import { setNewNumbersAll } from './AllFunction';
 import { setCommentRange } from 'typescript';
 
 function App() {
@@ -79,8 +80,10 @@ function App() {
     if (correctAll > 0) {
       localStorage.setItem('alllevel', `${correctAll}`)
     }
-    // setNewNumbersAll(setNumber1, setNumber2, setNumber3, correctAll, setDivideLevel)
-  }, [correctDivide])
+    let random = Math.round(Math.random() * 4);
+
+    setNewNumbersAll(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel, random, setOperator, setNewNumbersPlus, setNewNumbersMinus, setNewNumbersMultiply, setNewNumbersDivide)
+  }, [correctAll])
   
   const checkAnswer = (guess: string) => {
     if (type == 'plus') {
@@ -109,7 +112,7 @@ function App() {
             <button onClick={() => { setType('minus'); setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctMinus, setMinusLevel) }}>Minus</button>
             <button onClick={() => { setType('multiply'); setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctMultiply, setMultiplyLevel) }}>Multiply</button>
             <button onClick={() => { setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctDivide, setDivideLevel) }}>Divide</button>
-            <button onClick={() => setType('all')}>All</button>
+            <button onClick={() => { setType('all'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel) }}>All</button>
           </div>
           {type == 'plus' ?
             <div>
