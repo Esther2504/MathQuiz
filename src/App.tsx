@@ -114,6 +114,7 @@ function App() {
             <button onClick={() => { setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctDivide, setDivideLevel) }}>Divide</button>
             <button onClick={() => { setType('all'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel) }}>All</button>
           </div>
+          <div className='question'>
           {type == 'plus' ?
             <div>
               <p>Level: {plusLevel.toString()}</p>
@@ -138,6 +139,7 @@ function App() {
                   <div>{number1} {operator} {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
                 </div>
           }
+          </div>
         </div>
       </header>
     </div>

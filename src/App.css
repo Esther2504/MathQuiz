@@ -18,9 +18,10 @@ body {
 }
 
 .App-header {
-  background: url('./assets/images/appbackground.jpg');
+  /* background: url('./assets/images/linedpaper.avif');
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #586071;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,42 +33,56 @@ body {
   margin: 0;
 }
 
-.App-header::after {
+/* .App-header::after {
   content: "";
   width: 100%;
   height: 100%;
   background-color: #d9d6d697;
   position: absolute;
   top: 0;
-}
+} */
 
 .content {
   z-index: 2;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.menu {
-  width: 600px;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
 }
 
+.menu {
+  /* width: 200px; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .menu button {
- border: none;
- outline: none;
- background-color: #586071;
- color: #fff;
- padding: 0.5rem 2rem;
- cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #4c829b;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  width: 200px;
+  height: 100%;
+}
+
+.menu button.active {
+  background-color: #ffffff;
+  color: #4c829b;
+  border: 2px solid #4c829b;
+}
+
+.question {
+  padding: 3rem 6rem;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

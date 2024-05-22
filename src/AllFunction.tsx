@@ -1,8 +1,6 @@
 let checkAllAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber3: any, number1: number, number2: number, number3: number, setCorrect: any, correct: number, setLevel: any, level: number, operator: string, setOperator: any, setNewNumbersPlus: any, setNewNumbersMinus: any, setNewNumbersMultiply: any, setNewNumbersDivide: any) => {
     let answer;
 
-    console.log(correct)
-
     if (operator === '+') {
         answer = number1 + number2 + number3
       } else if (operator === '-') {
@@ -17,7 +15,6 @@ let checkAllAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber
           }
       }
      
-
       if (Number(guess) === answer) {
         setCorrect(correct + 1)
 
@@ -46,5 +43,4 @@ let checkAllAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber
 
     }
     
-
     export default checkAllAnswer
