@@ -114,29 +114,33 @@ function App() {
             <button onClick={() => { setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctDivide, setDivideLevel) }}>Divide</button>
             <button onClick={() => { setType('all'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel) }}>All</button>
           </div>
-          <div className='question'>
+          <div className='container'>
           {type == 'plus' ?
-            <div>
+            <div className='question'>
               <p>Level: {plusLevel.toString()}</p>
-              <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
-            : type == 'minus' ?
               <div>
+              <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div></div>
+            : type == 'minus' ?
+              <div className='question'>
                 <p>Level: {minusLevel.toString()}</p>
-                <div>{number1} - {number2} {number3 ? `- ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
+                <div><div>{number1} - {number2} {number3 ? `- ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div></div>
               : type == 'multiply' ?
-                <div>
+                <div className='question'>
                   <p>Level: {multiplyLevel.toString()}</p>
-                  <div>{number1} x {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
-                </div>
-                : type == 'divide' ?
                   <div>
-                    <p>Level: {divideLevel.toString()}</p>
-                    <div>{number1} / {number2} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+                  <div>{number1} x {number2} {number3 ? `x ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
                   </div>
+                  </div>
+                : type == 'divide' ?
+                  <div className='question'>
+                    <p>Level: {divideLevel.toString()}</p>
+                    <div><div>{number1} / {number2} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+                  </div></div>
                   : 
-                  <div>
+                  <div className='question'>
                   <p>Level: {allLevel.toString()}</p>
-                  <div>{number1} {operator} {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+                  <div><div>{number1} {operator} {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input> 
+                  </div>
                 </div>
           }
           </div>
