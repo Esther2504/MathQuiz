@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -23,7 +27,7 @@ body {
   /* background: url('./assets/images/linedpaper.avif');
   background-position: center;
   background-size: cover; */
-  background-color: #586071;
+  background: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,8 +52,14 @@ body {
 .content {
   z-index: 2;
   background-color: #fff;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   justify-content: space-between;
+  border: 5px solid #346f6f;
+  border-radius: 15px;
+  overflow-x: hidden;
+  width: 90vw;
+  height: 80vh;
 }
 
 .menu {
@@ -62,13 +72,15 @@ body {
 .menu button {
   border: none;
   outline: none;
-  background-color: #4c829b;
+  background: #346f6f;
   color: #fff;
   padding: 0.5rem 2rem;
   cursor: pointer;
   border: 2px solid #ffffff;
-  width: 200px;
+  width: 100%;
   height: 100%;
+  font-size: 1.7rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .menu button.active {
@@ -78,8 +90,9 @@ body {
 }
 
 .container {
-  width: 35rem;
-  height: 30rem;
+  width: 100%;
+  height: 100%;
+  color: #000;
 }
 
 .question {
@@ -100,14 +113,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 4rem;
+  margin-top: -2rem;
 }
 
 input {
   border-width: 0 0 2px 0;
   background-color: #fff;
-  font-size: 2rem;
+  font-size: 4rem;
   font-family: "Permanent Marker", cursive;
-  width: 6rem;
+  width: 12rem;
+  margin-top: 1rem;
 }
 
 input:focus {
