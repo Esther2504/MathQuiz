@@ -27,7 +27,6 @@ export let setNewNumbersDivide = (setNumber1: any, setNumber2: any, setNumber3: 
     setLevel(2)
     let newNumber1 = Math.round(Math.random() * 50);
     let newNumber2 = Math.round(Math.random() * 20);
-    console.log(correct) 
     while (newNumber1 % newNumber2 != 0) {
       newNumber2 = Math.round(Math.random() * 20);
     }

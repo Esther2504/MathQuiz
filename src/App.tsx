@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-// import All from './All';
 import checkMultiplyAnswer from './MultiplyFunction';
 import checkPlusAnswer from './PlusFunction';
 import checkMinusAnswer from './MinusFunction';

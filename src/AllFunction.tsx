@@ -40,7 +40,6 @@ let checkAllAnswer = (guess: string, setNumber1: any, setNumber2: any, setNumber
         setOperator('/')
         setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correct, setLevel)
       }
-
     }
     
     export default checkAllAnswer

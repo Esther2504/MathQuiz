@@ -140,7 +140,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
     setNumber3(newNumber3)
 
   } else if (correct === 100) {
-    alert('Congrats')
+    alert('Congrats! You finished the Subtract Game!')
   }
 }
 
