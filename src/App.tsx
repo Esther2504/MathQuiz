@@ -99,20 +99,16 @@ function App() {
     }
   }
 
-// useEffect(() => {
-// console.log(correctAll)
-// }, [number1])
-
   return (
     <div className="App">
       <header className="App-header">
         <div className='content'>
           <div className='menu'>
-            <button onClick={() => { setType('plus'); setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctPlus, setPlusLevel) }}>Plus</button>
-            <button onClick={() => { setType('minus'); setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctMinus, setMinusLevel) }}>Minus</button>
-            <button onClick={() => { setType('multiply'); setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctMultiply, setMultiplyLevel) }}>Multiply</button>
-            <button onClick={() => { setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctDivide, setDivideLevel) }}>Divide</button>
-            <button onClick={() => { setType('all'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel) }}>All</button>
+            <button className={type == 'plus' ? 'active' : 'non-active'} onClick={() => { setType('plus'); setNewNumbersPlus(setNumber1, setNumber2, setNumber3, correctPlus, setPlusLevel) }}>Add</button>
+            <button className={type == 'minus' ? 'active' : 'non-active'} onClick={() => { setType('minus'); setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctMinus, setMinusLevel) }}>Subtract</button>
+            <button className={type == 'multiply' ? 'active' : 'non-active'} onClick={() => { setType('multiply'); setNewNumbersMultiply(setNumber1, setNumber2, setNumber3, correctMultiply, setMultiplyLevel) }}>Multiply</button>
+            <button className={type == 'divide' ? 'active' : 'non-active'} onClick={() => { setType('divide'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctDivide, setDivideLevel) }}>Divide</button>
+            <button className={type == 'all' ? 'active' : 'non-active'} onClick={() => { setType('all'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel) }}>Random</button>
           </div>
           <div className='container'>
           {type == 'plus' ?
