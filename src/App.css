@@ -27,7 +27,7 @@ body {
   /* background: url('./assets/images/linedpaper.avif');
   background-position: center;
   background-size: cover; */
-  background: #ffffff;
+  background: #346f6f;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   justify-content: space-between;
-  border: 5px solid #346f6f;
+  border: 5px solid #ffffff;
   border-radius: 15px;
   overflow-x: hidden;
   width: 90vw;
@@ -113,14 +113,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: -2rem;
 }
 
 input {
   border-width: 0 0 2px 0;
   background-color: #fff;
-  font-size: 4rem;
+  font-size: 5rem;
   font-family: "Permanent Marker", cursive;
   width: 12rem;
   margin-top: 1rem;
@@ -148,4 +148,16 @@ input[type=number] {
   to {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .menu button {
+        font-size: 1.5rem;
+        padding: 0;
+   }
 }
