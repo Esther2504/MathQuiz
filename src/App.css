@@ -32,6 +32,7 @@ body {
   overflow-x: hidden;
   width: 90vw;
   height: 80vh;
+  text-align: center;
 }
 
 .menu {
@@ -117,11 +118,16 @@ input[type=number] {
   .content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
+    border-radius: 15px;
   }
 
   .menu button {
     font-size: 1.5rem;
     padding: 0;
+  }
+
+  .menu button:first-child {
+    border-radius: 10px 10px 0 0;
   }
 
   .question>div {

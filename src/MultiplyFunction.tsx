@@ -63,13 +63,13 @@ let checkMultiplyAnswer = (guess: string, setNumber1: any, setNumber2: any, setN
         setNumber1(Math.round(Math.random() * 200))
         setNumber2(Math.round(Math.random() * 200))
         setNumber2(Math.round(Math.random() * 200))
-      } else if (correct < 99) {
+      } else if (correct < 99 || correct > 100) {
         setLevel(10)
         setNumber1(Math.round(Math.random() * 500))
         setNumber2(Math.round(Math.random() * 500))
         setNumber3(Math.round(Math.random() * 500))
       } else if (correct === 100) {
-        alert('Congrats')
+        alert('Congrats! You answered all the Multiply Questions!')
       }
   }
   

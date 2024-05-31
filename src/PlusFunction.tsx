@@ -56,13 +56,13 @@ export let setNewNumbersPlus = (setNumber1: any, setNumber2: any, setNumber3: an
       setNumber1(Math.round(Math.random() * 5000))
       setNumber2(Math.round(Math.random() * 5000))
       setNumber3(Math.round(Math.random() * 5000))
-    } else if (correct < 99) {
+    } else if (correct < 99 || correct > 100) {
       setLevel(10)
       setNumber1(Math.round(Math.random() * 10000))
       setNumber2(Math.round(Math.random() * 10000))
       setNumber3(Math.round(Math.random() * 10000))
     } else if (correct === 100) {
-      alert('Congrats')
+      alert('Congrats! You answered all the Add Questions!')
     }
 }
 
