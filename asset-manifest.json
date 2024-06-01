@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/mathquiz/static/css/main.36706442.css",
-    "main.js": "/mathquiz/static/js/main.54596bc3.js",
-    "index.html": "/mathquiz/index.html",
-    "main.36706442.css.map": "/mathquiz/static/css/main.36706442.css.map",
-    "main.54596bc3.js.map": "/mathquiz/static/js/main.54596bc3.js.map"
+    "main.css": "/MathQuiz/static/css/main.36706442.css",
+    "main.js": "/MathQuiz/static/js/main.54596bc3.js",
+    "index.html": "/MathQuiz/index.html",
+    "main.36706442.css.map": "/MathQuiz/static/css/main.36706442.css.map",
+    "main.54596bc3.js.map": "/MathQuiz/static/js/main.54596bc3.js.map"
   },
   "entrypoints": [
     "static/css/main.36706442.css",
