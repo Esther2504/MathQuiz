@@ -15,7 +15,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
     setLevel(1)
     let newNumber1 = Math.round(Math.random() * 20);
     let newNumber2 = Math.round(Math.random() * 10);
-    
+
     while (newNumber1 < newNumber2) {
       newNumber2 = Math.round(Math.random() * 10);
     }
@@ -61,7 +61,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
     setNumber3(0)
   } else if (correct < 49) {
     setLevel(5)
-   
+
     let newNumber1 = Math.round(Math.random() * 1000);
     let newNumber2 = Math.round(Math.random() * 1000);
 
@@ -88,21 +88,21 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
   } else if (correct < 69) {
     setLevel(7)
     let newNumber1 = Math.round(Math.random() * 500);
-      let newNumber2 = Math.round(Math.random() * 500);
-      let newNumber3 = Math.round(Math.random() * 500);
+    let newNumber2 = Math.round(Math.random() * 500);
+    let newNumber3 = Math.round(Math.random() * 500);
 
-      while ((newNumber3 - newNumber2 - newNumber1) < 0) {
-        newNumber3 = Math.round(Math.random() * 500);
-      }
+    while ((newNumber3 - newNumber2 - newNumber1) < 0) {
+      newNumber3 = Math.round(Math.random() * 500);
+    }
 
-      setNumber1(newNumber1)
-      setNumber2(newNumber2)
-      setNumber3(newNumber3)
+    setNumber1(newNumber1)
+    setNumber2(newNumber2)
+    setNumber3(newNumber3)
   } else if (correct < 79) {
     setLevel(8)
     let newNumber1 = Math.round(Math.random() * 1000);
-      let newNumber2 = Math.round(Math.random() * 1000);
-      let newNumber3 = Math.round(Math.random() * 1000);
+    let newNumber2 = Math.round(Math.random() * 1000);
+    let newNumber3 = Math.round(Math.random() * 1000);
 
     while ((newNumber3 - newNumber2 - newNumber1) < 0) {
       newNumber3 = Math.round(Math.random() * 1000);
@@ -124,7 +124,7 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
     setNumber1(newNumber1)
     setNumber2(newNumber2)
     setNumber3(newNumber3)
-  } else if (correct < 99 || correct > 100) {
+  } else if (correct < 99) {
     setLevel(10)
 
     let newNumber1 = Math.round(Math.random() * 10000);
@@ -138,9 +138,6 @@ export let setNewNumbersMinus = (setNumber1: any, setNumber2: any, setNumber3: a
     setNumber1(newNumber1)
     setNumber2(newNumber2)
     setNumber3(newNumber3)
-
-  } else if (correct === 100) {
-    alert('Congrats! You answered all the Subtract Questions!')
   }
 }
 

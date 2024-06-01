@@ -110,7 +110,7 @@ export let setNewNumbersDivide = (setNumber1: any, setNumber2: any, setNumber3: 
 
     setNumber1(newNumber1)
     setNumber2(newNumber2)
-  } else if (correct < 99 || correct > 100) {
+  } else if (correct < 99) {
     setLevel(10)
     let newNumber1 = Math.round(Math.random() * 50000);
     let newNumber2 = Math.round(Math.random() * 10000);
@@ -121,8 +121,6 @@ export let setNewNumbersDivide = (setNumber1: any, setNumber2: any, setNumber3: 
 
     setNumber1(newNumber1)
     setNumber2(newNumber2)
-  } else if (correct == 100) {
-    alert('Congrats! You answered all the Divide Questions!')
   }
 }
 

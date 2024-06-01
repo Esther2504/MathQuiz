@@ -75,9 +75,17 @@ body {
   padding: 0 1rem;
 }
 
-.question p {
+.question p:first-child {
   text-align: right;
   margin-top: 0;
+}
+
+.question p:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  font-size: 3.5rem;
 }
 
 .question>div {

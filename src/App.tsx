@@ -60,7 +60,7 @@ function App() {
     }
     setNewNumbersMinus(setNumber1, setNumber2, setNumber3, correctMinus, setMinusLevel)
   }, [correctMinus])
-  
+
   useEffect(() => {
     if (correctMultiply > 0) {
       localStorage.setItem('multiplylevel', `${correctMultiply}`)
@@ -83,7 +83,7 @@ function App() {
 
     setNewNumbersAll(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel, random, setOperator, setNewNumbersPlus, setNewNumbersMinus, setNewNumbersMultiply, setNewNumbersDivide)
   }, [correctAll])
-  
+
   const checkAnswer = (guess: string) => {
     if (type == 'plus') {
       checkPlusAnswer(guess, setNumber1, setNumber2, setNumber3, number1, number2, number3, setCorrectPlus, correctPlus, setPlusLevel, plusLevel)
@@ -110,34 +110,57 @@ function App() {
             <button className={type == 'all' ? 'active' : 'non-active'} onClick={() => { setType('all'); setNewNumbersDivide(setNumber1, setNumber2, setNumber3, correctAll, setAllLevel) }}>Random</button>
           </div>
           <div className='container'>
-          {type == 'plus' ?
-            <div className='question'>
-              <p>Level: {plusLevel.toString()}</p>
-              <div>
-              <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div></div>
-            : type == 'minus' ?
+            {type == 'plus' ?
               <div className='question'>
-                <p>Level: {minusLevel.toString()}</p>
-                <div><div>{number1} - {number2} {number3 ? `- ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div></div>
-              : type == 'multiply' ?
-                <div className='question'>
-                  <p>Level: {multiplyLevel.toString()}</p>
+                <p>Level: {plusLevel.toString()}</p>
+                {correctPlus < 100 ?
                   <div>
-                  <div>{number1} x {number2} {number3 ? `x ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
-                  </div>
-                  </div>
-                : type == 'divide' ?
-                  <div className='question'>
-                    <p>Level: {divideLevel.toString()}</p>
-                    <div><div>{number1} / {number2} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
-                  </div></div>
-                  : 
-                  <div className='question'>
-                  <p>Level: {allLevel.toString()}</p>
-                  <div><div>{number1} {operator} {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input> 
-                  </div>
+                    <div>{number1} + {number2} {number3 ? `+ ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
+                  :
+                  <p>Well done, you finished all levels of Addition!</p>
+                }
+              </div>
+              : type == 'minus' ?
+                <div className='question'>
+                  <p>Level: {minusLevel.toString()}</p>
+                  {correctMinus < 100 ?
+                    <div><div>{number1} - {number2} {number3 ? `- ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input></div>
+                    :
+                    <p>Well done, you finished all levels of Subtraction!</p>
+                  }
                 </div>
-          }
+                : type == 'multiply' ?
+                  <div className='question'>
+                    <p>Level: {multiplyLevel.toString()}</p>
+                    {correctMultiply < 100 ?
+                      <div>
+                        <div>{number1} x {number2} {number3 ? `x ${number3}` : null} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+                      </div>
+                      :
+                      <p>Well done, you finished all levels of Multiplication!</p>
+                    }
+                  </div>
+                  : type == 'divide' ?
+                    <div className='question'>
+                      <p>Level: {divideLevel.toString()}</p>
+                      {correctDivide < 100 ?
+                        <div><div>{number1} / {number2} =</div><input autoFocus id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+                        </div>
+                        :
+                        <p>Well done, you finished all levels of Division!</p>
+                      }
+                    </div>
+                    :
+                    <div className='question'>
+                      <p>Level: {allLevel.toString()}</p>
+                      {correctAll < 100 ?
+                        <div><div>{number1} {operator} {number2} {number3 ? `x ${number3}` : null} =</div><input id="guess" type="number" onInput={(e) => checkAnswer((e.target as HTMLInputElement).value)}></input>
+                        </div>
+                        :
+                        <p>Well done, you finished all levels of Random!</p>
+                      }
+                    </div>
+            }
           </div>
         </div>
       </header>
